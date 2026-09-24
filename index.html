@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health Wise Foods | Healthy Choices. Better Living.</title>
+<meta name="description" content="Health Wise Foods is a Ghanaian food, nutrition education, healthy-living and food-training company serving individuals, families, schools, churches, companies and communities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --palm:#0E3B2C; --palm-2:#14523A; --leaf:#2E8B57; --gold:#F0A81C; --sun:#F9D45C;
+  --hibiscus:#C9304A; --cocoa:#5A2E14; --mist:#EFF5EB; --ink:#13201A; --white:#fff;
+  --display:'Bricolage Grotesque','Trebuchet MS',system-ui,sans-serif;
+  --body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+ul{list-style:none}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.02em}
+h1{font-size:clamp(2.9rem,7vw,5.6rem);line-height:.98;font-weight:800}
+h2{font-size:clamp(2rem,4.2vw,3.25rem);line-height:1.06;font-weight:700}
+h3{font-size:1.5rem;line-height:1.15;font-weight:700}
+p{max-width:62ch}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+.ic{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 1rem var(--body);padding:14px 26px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.gold{background:var(--gold);color:var(--ink)}
+.btn.gold:hover{background:var(--sun)}
+.btn.ghost{border-color:rgba(255,255,255,.45);color:var(--white)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn.dark{background:var(--palm);color:var(--white)}
+.btn.dark:hover{background:var(--palm-2)}
+
+/* header */
+.top{position:sticky;top:0;z-index:50;background:rgba(14,59,44,.94);backdrop-filter:blur(10px);color:var(--white)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand b{display:block;font:800 1.2rem/1.1 var(--display);letter-spacing:-.01em}
+.brand small{display:block;font-size:.78rem;opacity:.75}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{text-decoration:none;font-weight:500;font-size:.98rem;opacity:.9}
+.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--gold)}
+.nav .btn{padding:10px 20px;font-size:.95rem;opacity:1}
+.menu-btn{display:none;background:none;border:0;color:inherit;cursor:pointer;padding:8px}
+
+/* hero */
+.hero{background:var(--palm);color:var(--white);position:relative;overflow:hidden;background-image:radial-gradient(900px 500px at 85% 40%,rgba(240,168,28,.22),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:64px 0 72px}
+.lead{font-size:1.2rem;margin:26px 0 32px;color:#DCEBDD;max-width:52ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.where{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px}
+.where a{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(255,255,255,.08);text-decoration:none;font-size:.95rem;font-weight:500;border:1px solid rgba(255,255,255,.14)}
+.where a:hover{background:rgba(255,255,255,.16)}
+.where .ic{width:20px;height:20px;color:var(--gold)}
+.hero-art{justify-self:center;width:min(460px,100%)}
+.hero-art svg{width:100%;height:auto;overflow:visible}
+.strip{width:100%;height:24px}
+@keyframes rise{from{transform:translateY(90px)}to{transform:none}}
+@keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+.rise{animation:rise 1.6s cubic-bezier(.2,.7,.2,1) both}
+.pop{transform-box:fill-box;transform-origin:50% 100%;animation:pop .7s cubic-bezier(.3,1.5,.5,1) both;animation-delay:var(--d,0s)}
+
+/* sections */
+.sec{padding:100px 0}
+.sec.mist{background:var(--mist)}
+.sec.palm{background:var(--palm);color:var(--white)}
+.sec-head{max-width:760px;margin-bottom:56px}
+.sec-head p{margin-top:18px;font-size:1.15rem;opacity:.85}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:start}
+.statement{font:600 clamp(1.5rem,2.6vw,2.15rem)/1.25 var(--display);letter-spacing:-.015em;max-width:24em}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
+.four li{background:var(--white);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:12px;font-weight:600;box-shadow:0 1px 0 rgba(14,59,44,.12)}
+.four .ic{width:34px;height:34px;color:var(--leaf)}
+.four small{display:block;font-weight:400;font-size:.9rem;opacity:.75;line-height:1.4}
+.vm{display:grid;gap:16px}
+.vm article{padding:30px;border-radius:24px}
+.vm h3{font-size:1.15rem;margin-bottom:10px}
+.vm .v{background:var(--palm);color:var(--white)}
+.vm .m{background:var(--gold)}
+.objectives{margin-top:72px;display:grid;grid-template-columns:.7fr 1.3fr;gap:40px}
+.objectives ul{display:grid;grid-template-columns:1fr 1fr;gap:14px 36px}
+.objectives li{display:flex;gap:12px;align-items:flex-start}
+.objectives li::before{content:"";width:12px;height:12px;margin-top:9px;flex:none;background:var(--leaf);border-radius:0 100% 0 100%}
+
+/* services bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{border-radius:26px;padding:34px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.card .ic-wrap{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:rgba(0,0,0,.12)}
+.card .ic-wrap .ic{width:30px;height:30px}
+.card .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:10px}
+.card .chips li{font-size:.9rem;padding:5px 13px;border-radius:999px;border:1.5px solid currentColor;opacity:.9}
+.c-a{grid-column:span 6;background:var(--gold)}
+.c-b{grid-column:span 6;background:var(--palm);color:var(--white)}
+.c-c{grid-column:span 7;background:var(--hibiscus);color:var(--white)}
+.c-d{grid-column:span 5;background:var(--mist);border:2px solid var(--palm)}
+.card .note{font-size:.92rem;padding:12px 14px;border-radius:12px;background:rgba(14,59,44,.08);margin-top:auto}
+.card .tag{font:700 .85rem var(--body);opacity:.8}
+
+/* products */
+
+/* outreach tabs */
+.tabs{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:stretch}
+.tablist{display:flex;flex-direction:column;gap:10px}
+.tab{display:flex;align-items:center;gap:14px;text-align:left;font:600 1.05rem var(--body);padding:18px 20px;border-radius:18px;border:2px solid var(--palm);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.tab:hover{background:rgba(14,59,44,.07)}
+.tab[aria-selected="true"]{background:var(--palm);color:var(--white)}
+.tab .ic{width:28px;height:28px}
+.panel{border-radius:28px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.panel[hidden]{display:none}
+.panel .quote{font:700 clamp(1.5rem,2.6vw,2.2rem)/1.15 var(--display);letter-spacing:-.02em;margin-bottom:16px}
+.panel ul{display:grid;gap:10px;align-content:start}
+.panel li{background:rgba(255,255,255,.7);color:var(--ink);padding:12px 16px;border-radius:14px;font-weight:500;display:flex;gap:12px;align-items:center}
+.panel li::before{content:"";width:10px;height:10px;border-radius:0 100% 0 100%;background:var(--leaf);flex:none}
+.p-school{background:#CFE6D2}.p-church{background:#F6D889}.p-org{background:#F3C6B8}
+.audience{margin-top:18px;font-size:.95rem;font-weight:600}
+
+/* training */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
+.step{padding:34px 30px 34px 0;position:relative}
+.step + .step{padding-left:30px;border-left:2px dashed rgba(255,255,255,.28)}
+.step .n{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--ink);font:800 1.3rem var(--display);display:grid;place-items:center;margin-bottom:20px}
+.step h3{font-size:2rem;margin-bottom:14px}
+.step li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.suit{margin-top:40px;background:rgba(255,255,255,.08);border-radius:22px;padding:28px 32px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.suit b{font:700 1.15rem var(--display)}
+.suit ul{display:flex;flex-wrap:wrap;gap:10px}
+.suit li{background:var(--gold);color:var(--ink);padding:6px 16px;border-radius:999px;font-weight:600;font-size:.95rem}
+
+/* serve */
+.serve{display:flex;flex-wrap:wrap;gap:12px}
+.serve li{font:600 1.35rem var(--display);padding:12px 26px;border-radius:999px;letter-spacing:-.01em}
+.serve li:nth-child(4n+1){background:var(--palm);color:var(--white)}
+.serve li:nth-child(4n+2){background:var(--gold)}
+.serve li:nth-child(4n+3){background:var(--hibiscus);color:var(--white)}
+.serve li:nth-child(4n){background:var(--mist);box-shadow:inset 0 0 0 2px var(--palm)}
+
+/* values */
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.values li{padding:26px;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14)}
+.values .ic{width:36px;height:36px;color:var(--gold);margin-bottom:16px}
+.values h3{font-size:1.15rem;margin-bottom:8px;letter-spacing:.02em}
+.values p{font-size:.98rem;opacity:.85}
+.values li:last-child{background:var(--gold);color:var(--ink);grid-column:span 1;display:flex;align-items:flex-end;font:700 1.35rem/1.2 var(--display)}
+
+/* partner */
+.partner{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.attrs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.attrs li{padding:14px 18px;background:var(--mist);border-radius:14px;font-weight:600}
+.pcols{display:grid;gap:28px}
+.pcols h3{font-size:1.15rem;margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags li{padding:6px 15px;border-radius:999px;border:2px solid var(--palm);font-weight:500;font-size:.96rem}
+.tags.fill li{border-color:transparent;background:var(--palm);color:var(--white)}
+.promise{background:var(--gold);padding:64px 0}
+.promise p{max-width:none;font:800 clamp(1.8rem,4.6vw,3.6rem)/1.08 var(--display);letter-spacing:-.025em}
+.promise small{display:block;margin-top:18px;font-size:1.05rem;max-width:60ch}
+
+/* contact */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.contact-list{margin-top:32px;display:grid;gap:14px}
+.contact-list li{display:flex;gap:14px;align-items:center}
+.contact-list .ic{color:var(--gold)}
+.form{background:var(--white);color:var(--ink);border-radius:28px;padding:36px;display:grid;gap:18px}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+.form input,.form select,.form textarea{font:inherit;padding:13px 14px;border-radius:12px;border:2px solid #C9D6CB;background:#fff;color:var(--ink);width:100%}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--palm);box-shadow:0 0 0 3px rgba(240,168,28,.5)}
+.form textarea{min-height:120px;resize:vertical}
+.form .status{font-weight:600;color:var(--palm-2);min-height:1.4em}
+
+footer{background:#092A1F;color:#CFE0D2;padding:56px 0 32px}
+footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:flex-end;align-content:start}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:.9rem;opacity:.75}
+
+
+/* photography */
+.hero-photo{position:relative;margin:0;width:100%}
+.hero-photo::before{content:"";position:absolute;inset:-16px -16px 0;border:2px solid rgba(240,168,28,.45);border-radius:999px 999px 36px 36px;pointer-events:none}
+.card-img{width:calc(100% + 68px);max-width:none;height:200px;object-fit:cover;margin:-34px -34px 8px}
+.panel-img{width:100%;height:230px;object-fit:cover;border-radius:18px;margin-top:22px}
+.credits a{text-decoration:underline}
+
+
+.hero-photo .hp-frame{position:relative;aspect-ratio:4/5;border-radius:999px 999px 28px 28px;border:6px solid var(--gold);overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.35);background:radial-gradient(circle at 50% 62%,#FFE082 0 22%,transparent 23%),linear-gradient(#F9D45C,#E9702E)}
+.hero-photo .hp-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arches{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:start}
+.arch{text-align:center}
+.arch:nth-child(even){margin-top:34px}
+.ph{position:relative;aspect-ratio:4/5;border-radius:999px 999px 18px 18px;overflow:hidden;display:grid;place-items:center;background:var(--bg,#F6D889)}
+.ph svg{width:62%;height:auto}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arch h3{font-size:1.02rem;line-height:1.2;margin-top:14px}
+.a1 .ph{--bg:#F6D889}.a2 .ph{--bg:#CFE6D2}.a3 .ph{--bg:#F3C6B8}.a4 .ph{--bg:#BFE3C8}.a5 .ph{--bg:#E8D2B0}.a6 .ph{--bg:#D4E3F0}
+@media (max-width:980px){.arches{grid-template-columns:repeat(3,1fr)}.arch:nth-child(even){margin-top:0}.arch:nth-child(3n+2){margin-top:28px}}
+@media (max-width:600px){.arches{grid-template-columns:1fr 1fr;gap:14px}.arch:nth-child(3n+2){margin-top:0}.arch:nth-child(even){margin-top:24px}}
+
+/* responsive */
+@media (max-width:980px){
+  .nav{position:absolute;top:72px;left:0;right:0;background:var(--palm);flex-direction:column;align-items:flex-start;padding:20px 24px 28px;gap:18px;display:none}
+  .nav.open{display:flex}
+  .menu-btn{display:block}
+  .hero-grid,.about-grid,.objectives,.partner,.contact,.tabs,.panel{grid-template-columns:1fr}
+  .hero-art{order:-1;width:min(320px,80%);justify-self:start}
+  .four{grid-template-columns:1fr 1fr}
+  .c-a,.c-b,.c-c,.c-d{grid-column:span 12}
+  .tablist{flex-direction:row;flex-wrap:wrap}
+  .steps{grid-template-columns:1fr}
+  .step,.step + .step{padding:28px 0;border-left:0;border-top:2px dashed rgba(255,255,255,.28)}
+  .step:first-child{border-top:0}
+  .values{grid-template-columns:1fr 1fr}
+  footer .wrap{grid-template-columns:1fr}
+  footer nav{justify-content:flex-start}
+}
+@media (max-width:600px){
+  .sec{padding:72px 0}
+  .objectives ul,.attrs,.form .row{grid-template-columns:1fr}
+  .values{grid-template-columns:1fr}
+  .panel{padding:26px}
+  .four{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.pop{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Shared graphics: kente pattern, icons, illustrations -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="kente" width="48" height="24" patternUnits="userSpaceOnUse">
+      <rect width="48" height="24" fill="#0E3B2C"/>
+      <rect width="48" height="4" fill="#F0A81C"/>
+      <rect y="4" width="48" height="2" fill="#C9304A"/>
+      <path d="M12 12l7-5 7 5-7 5z" fill="#F0A81C"/>
+      <path d="M36 12l7-5 7 5-7 5z" fill="#C9304A" transform="translate(-14 0)"/>
+      <rect y="18" width="48" height="2" fill="#C9304A"/>
+      <rect y="20" width="48" height="4" fill="#F0A81C"/>
+    </pattern>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F9D45C"/><stop offset=".6" stop-color="#F5A93A"/><stop offset="1" stop-color="#E9702E"/>
+    </linearGradient>
+
+    <!-- icons -->
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19c3-5 6-8 10-10"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M9 21h6"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 3v8M9 3v8M6 7h3M7.5 11v10M17 3c-2 2-3 5-3 8h3v10"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5M22 9v6"/></symbol>
+    <symbol id="i-church" viewBox="0 0 24 24"><path d="M12 2v4M10 4h4M12 6l6 4v11H6V10z"/><path d="M10 21v-5a2 2 0 0 1 4 0v5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-2v18M12 8h8v13"/><path d="M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2"/></symbol>
+    <symbol id="i-jar" viewBox="0 0 24 24"><path d="M8 3h8v3H8zM7 6h10v15H7z"/><path d="M7 11h10M7 16h10"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><path d="M17 11a2.5 2.5 0 1 0 0-5M17 14c2.5 0 4.5 2 4.5 5"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1z"/><path d="M12 6v14"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z"/></symbol>
+    <symbol id="i-seed" viewBox="0 0 24 24"><path d="M12 21v-9M12 12c0-4 3-6 7-6 0 4-3 6-7 6zM12 15c0-3-2-5-6-5 0 3 2 5 6 5z"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v11h14V10M10 21v-6h4v6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+
+    <!-- produce illustrations -->
+    <symbol id="ginger" viewBox="0 0 100 60">
+      <path d="M8 38c4-10 12-12 20-10 2-8 10-12 16-8 6-6 16-4 18 4 8-4 18 0 18 8 6 2 10 8 6 14-4 6-12 6-18 4-4 6-14 6-20 2-6 4-16 2-20-4-8 2-16-2-20-10z" fill="#D9963F"/>
+      <path d="M20 36c6-2 10 0 14 4M46 30c4 2 6 6 6 10M66 32c5-1 9 2 11 6" stroke="#A9691F" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <circle cx="86" cy="38" r="5" fill="#F2D48A"/>
+    </symbol>
+    <symbol id="garlic" viewBox="0 0 60 70">
+      <path d="M30 6c2 8 22 16 22 38 0 14-10 22-22 22S8 58 8 44C8 22 28 14 30 6z" fill="#F6F0DC" stroke="#D3C79F" stroke-width="2"/>
+      <path d="M30 10c-8 16-10 38 0 56M30 10c8 16 10 38 0 56" stroke="#D3C79F" stroke-width="2" fill="none"/>
+      <path d="M26 66h8l-2 4h-4z" fill="#C9B77E"/>
+    </symbol>
+    <symbol id="leaf" viewBox="0 0 60 80">
+      <path d="M30 4c26 20 26 52 0 72C4 56 4 24 30 4z" fill="#2E9B5F"/>
+      <path d="M30 10v64M30 30l-10-8M30 44l12-10M30 56l-10-8" stroke="#1B6B45" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="jar" viewBox="0 0 60 80">
+      <rect x="10" y="4" width="40" height="14" rx="4" fill="#F0A81C"/>
+      <rect x="6" y="16" width="48" height="60" rx="10" fill="#F6F0DC" stroke="#D3C79F" stroke-width="2"/>
+      <rect x="6" y="36" width="48" height="24" fill="#C9304A"/>
+      <path d="M30 42c8 4 8 12 0 14-8-2-8-10 0-14z" fill="#F9D45C"/>
+    </symbol>
+    <symbol id="powder" viewBox="0 0 120 70">
+      <path d="M14 30C32 0 88 0 106 30z" fill="#E4A63A"/>
+      <path d="M4 28h112c0 26-24 40-56 40S4 54 4 28z" fill="#8A4B1E"/>
+      <circle cx="30" cy="42" r="3" fill="#F0A81C"/><circle cx="60" cy="52" r="3" fill="#F0A81C"/><circle cx="90" cy="42" r="3" fill="#F0A81C"/>
+    </symbol>
+    <symbol id="blend" viewBox="0 0 120 70">
+      <path d="M12 30c8-20 28-20 40 0z" fill="#6DAE4F"/>
+      <path d="M40 30c10-28 34-28 46 0z" fill="#E4A63A"/>
+      <path d="M72 30c8-18 26-18 36 0z" fill="#C0703A"/>
+      <path d="M4 28h112c0 26-24 40-56 40S4 54 4 28z" fill="#14523A"/>
+      <circle cx="30" cy="42" r="3" fill="#F9D45C"/><circle cx="60" cy="52" r="3" fill="#F9D45C"/><circle cx="90" cy="42" r="3" fill="#F9D45C"/>
+    </symbol>
+    <symbol id="snack" viewBox="0 0 100 64">
+      <rect x="6" y="14" width="62" height="30" rx="9" fill="#B9773A" transform="rotate(-8 37 29)"/>
+      <circle cx="22" cy="26" r="4" fill="#E9C27A"/><circle cx="38" cy="22" r="4" fill="#E9C27A"/><circle cx="54" cy="24" r="4" fill="#E9C27A"/><circle cx="30" cy="36" r="3.5" fill="#F6E3B0"/><circle cx="48" cy="36" r="3.5" fill="#F6E3B0"/>
+      <rect x="50" y="30" width="44" height="26" rx="8" fill="#8A4B1E" transform="rotate(6 72 43)"/>
+      <circle cx="64" cy="42" r="3.5" fill="#E9C27A"/><circle cx="78" cy="44" r="3.5" fill="#E9C27A"/><circle cx="72" cy="52" r="3" fill="#F6E3B0"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Health Wise Foods home">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true">
+        <circle cx="21" cy="21" r="21" fill="#F0A81C"/>
+        <path d="M11 32c0-11 7-18 20-19 0 13-7 20-18 20" fill="#0E3B2C"/>
+        <path d="M11 32c5-7 9-11 14-14" stroke="#F0A81C" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span><b>Health Wise Foods</b><small>Healthy Choices. Better Living.</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#i-menu"/></svg></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#outreach">Outreach</a>
+      <a href="#training">Training</a>
+      <a href="#partner">Partner</a>
+      <a class="btn gold" href="#contact">Book a programme</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="hero-title">Healthy Choices.<br>Better Living.</h1>
+      <p class="lead">Health Wise Foods is a Ghanaian food, nutrition education, healthy-living and food-training company. We help individuals, families and communities make informed, healthier food choices.</p>
+      <div class="cta-row">
+        <a class="btn gold" href="#contact">Book a programme <svg class="ic"><use href="#i-arrow"/></svg></a>
+        <a class="btn ghost" href="#training">Explore food training</a>
+      </div>
+      <ul class="where" aria-label="Places we work">
+        <li><a href="#outreach"><svg class="ic"><use href="#i-school"/></svg>Schools</a></li>
+        <li><a href="#outreach"><svg class="ic"><use href="#i-church"/></svg>Churches</a></li>
+        <li><a href="#partner"><svg class="ic"><use href="#i-building"/></svg>Companies</a></li>
+        <li><a href="#partner"><svg class="ic"><use href="#i-users"/></svg>Communities</a></li>
+      </ul>
+    </div>
+
+    <div class="hero-art">
+      <figure class="hero-photo"><div class="hp-frame"><img src="https://images.unsplash.com/photo-1599997842102-744084270ad2?auto=format&fit=crop&w=800&q=72" alt="Fresh vegetables on display at an African market stall" width="800" height="1000" fetchpriority="high" onerror="this.remove()"></div></figure>
+    </div>
+  </div>
+  <svg class="strip" aria-hidden="true"><rect width="100%" height="24" fill="url(#kente)"/></svg>
+</section>
+
+<!-- ABOUT -->
+<section class="sec mist" id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <h2 id="about-h">Better health starts with the food choices we make every day.</h2>
+        <p class="statement" style="margin-top:28px">We combine healthy food production with education, consultation, community outreach and practical skills training.</p>
+        <ul class="four" aria-label="Where we reach people">
+          <li><svg class="ic"><use href="#i-home"/></svg>Where they live<small>Families and communities</small></li>
+          <li><svg class="ic"><use href="#i-school"/></svg>Where they learn<small>Schools and institutions</small></li>
+          <li><svg class="ic"><use href="#i-church"/></svg>Where they worship<small>Churches and church groups</small></li>
+          <li><svg class="ic"><use href="#i-building"/></svg>Where they work<small>Companies and organizations</small></li>
+        </ul>
+      </div>
+      <div class="vm">
+        <article class="v"><h3>Our vision</h3><p>To become a leading and trusted Ghanaian brand in healthy food production, nutrition education, healthy-living promotion and food entrepreneurship training, while expanding our impact across Africa.</p></article>
+        <article class="m"><h3>Our mission</h3><p>To empower people with quality food products, practical knowledge, skills and education that encourage healthier lifestyles and create opportunities in healthy-food production.</p></article>
+      </div>
+    </div>
+
+    <div class="objectives">
+      <h3 style="font-size:1.8rem">What we work toward</h3>
+      <ul>
+        <li>Promote healthy eating and healthy lifestyles</li>
+        <li>Produce and provide quality food products</li>
+        <li>Educate individuals and communities about nutrition and healthy food choices</li>
+        <li>Organize healthy-living conferences, seminars and workshops</li>
+        <li>Provide educational programmes for schools and churches</li>
+        <li>Offer individual healthy-living consultations</li>
+        <li>Train people in healthy-food production and processing</li>
+        <li>Encourage food entrepreneurship and self-employment</li>
+        <li>Promote food safety, hygiene and responsible food handling</li>
+        <li>Support communities through health and nutrition awareness programmes</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services" aria-labelledby="serv-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="serv-h">Four ways we work with you</h2><p>From the food on the shelf to the talk in the hall, every service is practical, interactive and built around your group.</p></div>
+    <div class="bento">
+      <article class="card c-a">
+        <img class="card-img" onerror="this.remove()" src="https://images.unsplash.com/photo-1542814784-133212a2e378?auto=format&fit=crop&w=800&q=70" alt="Fresh vegetables arranged in a bowl" width="1000" height="667">
+        <div class="ic-wrap"><svg class="ic"><use href="#i-jar"/></svg></div>
+        <h3>Healthy food production</h3>
+        <p>We develop and produce food products with a focus on quality, convenience, nutrition and good food practices.</p>
+        <ul class="chips"><li>Ginger and garlic products</li><li>Natural food powders</li><li>Healthy food blends</li><li>Plant-based products</li><li>Healthy snacks</li><li>Food ingredients</li></ul>
+      </article>
+      <article class="card c-b">
+        <div class="ic-wrap"><svg class="ic"><use href="#i-mic"/></svg></div>
+        <h3>Healthy-living conferences</h3>
+        <p>Educational conferences for organizations, churches, schools, companies and communities.</p>
+        <ul class="chips"><li>Balanced nutrition</li><li>Food hygiene and safety</li><li>Family nutrition</li><li>Understanding food labels</li><li>Healthy eating on a budget</li><li>Healthy lifestyles</li></ul>
+      </article>
+      <article class="card c-c">
+        <div class="ic-wrap"><svg class="ic"><use href="#i-utensils"/></svg></div>
+        <h3>Workshops and seminars</h3>
+        <p>Hands-on learning for groups who want to cook, process and build with healthy food.</p>
+        <ul class="chips"><li>Healthy cooking</li><li>Food preservation</li><li>Food processing</li><li>Healthy snacks</li><li>Food packaging</li><li>Product development</li><li>Food entrepreneurship</li></ul>
+      </article>
+      <article class="card c-d">
+        <div class="ic-wrap" style="background:rgba(14,59,44,.12)"><svg class="ic"><use href="#i-chat"/></svg></div>
+        <h3>Individual consultations</h3>
+        <p>One-to-one sessions on healthy eating education, meal planning, food choices, healthy cooking, family nutrition education and lifestyle improvement.</p>
+        <p class="note">Our consultations are educational and do not replace medical diagnosis or treatment by a qualified healthcare professional.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="sec mist" id="products" aria-labelledby="prod-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="prod-h">Food made for everyday health</h2><p>Our product range can include the following, each developed for quality, convenience and nutrition.</p></div>
+    <div class="arches">
+      <article class="arch a1"><div class="ph"><svg viewBox="0 0 130 90" aria-hidden="true"><use href="#ginger" x="0" y="26" width="90" height="54"/><use href="#garlic" x="76" y="8" width="50" height="60"/></svg><img src="https://images.unsplash.com/photo-1758738880738-8f662ac47e4f?auto=format&fit=crop&w=640&q=70" alt="Fresh ginger root, garlic, shallots and chilli peppers" width="640" height="800" onerror="this.remove()"></div><h3>Ginger and garlic products</h3></article>
+      <article class="arch a2"><div class="ph"><svg viewBox="0 0 120 70" aria-hidden="true"><use href="#powder" width="120" height="70"/></svg><img src="https://images.unsplash.com/photo-1504387828636-abeb50778c0c?auto=format&fit=crop&w=640&q=70" alt="Turmeric powder being poured into a bowl" width="640" height="800" onerror="this.remove()"></div><h3>Natural food powders</h3></article>
+      <article class="arch a3"><div class="ph"><svg viewBox="0 0 120 70" aria-hidden="true"><use href="#blend" width="120" height="70"/></svg><img src="https://images.unsplash.com/photo-1565117661210-fd54898de423?auto=format&fit=crop&w=640&q=70" alt="Green powder blend in a white bowl" width="640" height="800" onerror="this.remove()"></div><h3>Healthy food blends</h3></article>
+      <article class="arch a4"><div class="ph"><svg viewBox="0 0 130 84" aria-hidden="true"><use href="#leaf" x="6" y="14" width="46" height="62" transform="rotate(-16 29 45)"/><use href="#leaf" x="42" y="0" width="52" height="70"/><use href="#leaf" x="82" y="14" width="46" height="62" transform="rotate(16 105 45)"/></svg><img src="https://images.unsplash.com/photo-1634731201932-9bd92839bea2?auto=format&fit=crop&w=640&q=70" alt="Fresh spinach leaves" width="640" height="800" onerror="this.remove()"></div><h3>Plant-based products</h3></article>
+      <article class="arch a5"><div class="ph"><svg viewBox="0 0 100 64" aria-hidden="true"><use href="#snack" width="100" height="64"/></svg><img src="https://images.unsplash.com/photo-1633360821154-1935fb5671e6?auto=format&fit=crop&w=640&q=70" alt="A granola bar on a table" width="640" height="800" onerror="this.remove()"></div><h3>Healthy snacks</h3></article>
+      <article class="arch a6"><div class="ph"><svg viewBox="0 0 130 90" aria-hidden="true"><use href="#jar" x="8" y="6" width="52" height="78"/><use href="#jar" x="70" y="18" width="52" height="66"/></svg><img src="https://images.unsplash.com/photo-1775203304348-bc115948e718?auto=format&fit=crop&w=640&q=70" alt="Assortment of dried ingredients and spices on wood" width="640" height="800" onerror="this.remove()"></div><h3>Food ingredients</h3></article>
+    </div>
+  </div>
+</section>
+
+<!-- OUTREACH -->
+<section class="sec" id="outreach" aria-labelledby="out-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="out-h">We come to where you live, learn, worship and work</h2></div>
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Outreach programmes">
+        <button class="tab" role="tab" id="t1" aria-selected="true" aria-controls="p1"><svg class="ic"><use href="#i-school"/></svg>Schools</button>
+        <button class="tab" role="tab" id="t2" aria-selected="false" aria-controls="p2" tabindex="-1"><svg class="ic"><use href="#i-church"/></svg>Churches</button>
+        <button class="tab" role="tab" id="t3" aria-selected="false" aria-controls="p3" tabindex="-1"><svg class="ic"><use href="#i-building"/></svg>Companies and communities</button>
+      </div>
+      <div>
+        <div class="panel p-school" role="tabpanel" id="p1" aria-labelledby="t1">
+          <div><p class="quote">Healthy Children. Healthy Future.</p><p>Health Wise Foods visits schools to educate students, teachers and parents about healthy living.</p>
+            <img class="panel-img" onerror="this.remove()" src="https://images.unsplash.com/photo-1569003376670-596a186b90f8?auto=format&fit=crop&w=800&q=70" alt="Smiling school children at a classroom door in Sierra Leone" width="1000" height="667"></div>
+          <ul><li>Nutrition education</li><li>Healthy eating talks</li><li>Healthy snack education</li><li>Food and personal hygiene</li><li>Healthy lifestyle education</li><li>Interactive food demonstrations</li><li>Healthy cooking demonstrations</li><li>Nutrition activities</li></ul>
+        </div>
+        <div class="panel p-church" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
+          <div><p class="quote">Healthy Living Is Everyone's Responsibility.</p><p>We partner with churches to bring healthy-living education to members and their communities.</p><p class="audience">Programmes for women's groups, men's groups, youth groups, children's ministries, church societies, families and church leadership.</p></div>
+          <ul><li>Health seminars</li><li>Conferences</li><li>Workshops</li><li>Cooking demonstrations</li><li>Nutrition awareness programmes</li></ul>
+        </div>
+        <div class="panel p-org" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
+          <div><p class="quote">Practical education for your members, employees and neighbours.</p><p>Companies, NGOs, associations and community groups can bring Health Wise Foods in to teach and train.</p></div>
+          <ul><li>Corporate wellness education</li><li>Health-awareness programmes</li><li>Community outreach</li><li>Workshops and conferences</li><li>Food-production training</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="sec palm" id="training" aria-labelledby="train-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="train-h">Learn the Skill. Create the Product. Build the Opportunity.</h2><p>Practical healthy-food production training, from choosing raw materials to pricing your first product.</p></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Learn the skill</h3><ul><li>Selection of raw materials</li><li>Hygiene and sanitation</li><li>Basic food safety</li></ul></div>
+      <div class="step"><div class="n">2</div><h3>Create the product</h3><ul><li>Food preparation</li><li>Food processing</li><li>Dehydration and drying</li><li>Grinding and milling</li><li>Food preservation</li><li>Product development</li></ul></div>
+      <div class="step"><div class="n">3</div><h3>Build the opportunity</h3><ul><li>Packaging and labelling</li><li>Storage</li><li>Costing and pricing</li><li>Basic food entrepreneurship</li></ul></div>
+    </div>
+    <div class="suit"><b>Suitable for</b><ul><li>Beginners</li><li>Food entrepreneurs</li><li>Community groups</li><li>Women's groups</li><li>Youth groups</li><li>People starting or expanding a food business</li></ul></div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="sec" aria-labelledby="serve-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="serve-h">Who we serve</h2></div>
+    <ul class="serve">
+      <li>Individuals</li><li>Families</li><li>Schools</li><li>Churches</li><li>Companies</li><li>NGOs</li><li>Community organizations</li><li>Food entrepreneurs</li><li>Restaurants</li><li>Food processors</li><li>Women's groups</li><li>Youth organizations</li><li>Corporate organizations</li><li>Institutions</li>
+    </ul>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="sec palm" id="values" aria-labelledby="val-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="val-h">The values behind every programme and product</h2></div>
+    <ul class="values">
+      <li><svg class="ic"><use href="#i-star"/></svg><h3>Quality</h3><p>High standards in our products and services.</p></li>
+      <li><svg class="ic"><use href="#i-heart"/></svg><h3>Health</h3><p>Informed, healthier food and lifestyle choices.</p></li>
+      <li><svg class="ic"><use href="#i-shield"/></svg><h3>Integrity</h3><p>Honest, responsible and professional conduct.</p></li>
+      <li><svg class="ic"><use href="#i-book"/></svg><h3>Education</h3><p>Knowledge as the foundation of healthier communities.</p></li>
+      <li><svg class="ic"><use href="#i-bulb"/></svg><h3>Innovation</h3><p>Better ways to develop food products and deliver services.</p></li>
+      <li><svg class="ic"><use href="#i-seed"/></svg><h3>Empowerment</h3><p>Knowledge and practical skills that create opportunities.</p></li>
+      <li><svg class="ic"><use href="#i-users"/></svg><h3>Community</h3><p>Healthier individuals build stronger families and communities.</p></li>
+      <li>Healthy living, practical and achievable.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section class="sec" id="partner" aria-labelledby="part-h">
+  <div class="wrap partner">
+    <div>
+      <h2 id="part-h">Bring healthy-living education directly to your people</h2>
+      <p style="margin-top:20px">Partner with Health Wise Foods to reach your members, students, employees and communities. Every programme can be customized to your group and objectives.</p>
+      <ul class="attrs"><li>Educational</li><li>Practical</li><li>Interactive</li><li>Community-focused</li><li>Customizable</li></ul>
+      <a class="btn dark" href="#contact" style="margin-top:32px">Start a partnership <svg class="ic"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="pcols">
+      <div><h3>We welcome partnerships with</h3><ul class="tags fill"><li>Schools</li><li>Churches</li><li>Companies</li><li>NGOs</li><li>Community groups</li><li>Associations</li><li>Food businesses</li><li>Institutions</li></ul></div>
+      <div><h3>Partnership opportunities</h3><ul class="tags"><li>Health-awareness programmes</li><li>School nutrition programmes</li><li>Church health programmes</li><li>Corporate wellness education</li><li>Community outreach</li><li>Food-production training</li><li>Workshops and conferences</li><li>Food-product development</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise" aria-label="Our promise">
+  <div class="wrap">
+    <p>We educate. We empower. We produce. We create opportunities.</p>
+    <small>We believe healthy living should be practical, understandable and achievable, and we help people move from hearing about healthy living to applying it in everyday life.</small>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec palm" id="contact" aria-labelledby="con-h">
+  <div class="wrap contact">
+    <div>
+      <h2 id="con-h">Let's work together</h2>
+      <p style="margin-top:18px">Would you like Health Wise Foods to organize a conference, workshop, school programme, church programme, consultation or healthy-food production training for your organization? Tell us about your group.</p>
+      <ul class="contact-list" id="contact-list">
+        <li><svg class="ic"><use href="#i-pin"/></svg>Ghana</li>
+      </ul>
+    </div>
+    <form class="form" id="enquiry" novalidate>
+      <div class="row">
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Organization<input name="org" autocomplete="organization"></label>
+      </div>
+      <div class="row">
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Phone or WhatsApp<input name="phone" type="tel" autocomplete="tel"></label>
+      </div>
+      <label>What do you need?
+        <select name="type" required>
+          <option value="">Choose one</option>
+          <option>Healthy-living conference</option>
+          <option>Workshop or seminar</option>
+          <option>School programme</option>
+          <option>Church programme</option>
+          <option>Individual consultation</option>
+          <option>Healthy-food production training</option>
+          <option>Partnership</option>
+        </select>
+      </label>
+      <label>Tell us about your group<textarea name="msg" placeholder="Who is it for, how many people, and when?"></textarea></label>
+      <button class="btn gold" type="submit" style="justify-self:start">Send enquiry <svg class="ic"><use href="#i-arrow"/></svg></button>
+      <p class="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top" style="color:#fff"><svg width="38" height="38" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="21" fill="#F0A81C"/><path d="M11 32c0-11 7-18 20-19 0 13-7 20-18 20" fill="#0E3B2C"/></svg><span><b>Health Wise Foods</b><small>Healthy Choices. Better Living.</small></span></a>
+      <p style="margin-top:16px;font-size:.95rem">A Ghanaian food, nutrition education, healthy-living and food-training company.</p>
+    </div>
+    <nav aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#outreach">Outreach</a><a href="#training">Training</a><a href="#values">Values</a><a href="#partner">Partner</a><a href="#contact">Contact</a></nav>
+    <p class="fine credits">Photography via Unsplash: FitNish Media, Aalo Lens, Annie Spratt, Taylor Kiser, Rens D, Towfiqu Barbhuiya, Alice Pasqual, Ines Iachelini and Nadine Primeau. Placeholder imagery, to be replaced with Health Wise Foods photos.</p>
+    <p class="fine">Ghana &bull; 2026 &bull; Health Wise Foods. Our consultations are educational and do not replace medical diagnosis or treatment by a qualified healthcare professional.</p>
+  </div>
+</footer>
+
+<script>
+/* ---- Contact details: fill these in; empty ones are hidden ---- */
+const CONFIG = {
+  phone: "",      // e.g. "+233 XX XXX XXXX"
+  whatsapp: "",   // digits only, e.g. "233XXXXXXXXX"
+  email: "",      // e.g. "info@yourdomain.com"
+  website: "",
+  social: []      // e.g. [{label:"Instagram", url:"https://instagram.com/..."}]
+};
+(function(){
+  const list = document.getElementById('contact-list');
+  const icon = n => '<svg class="ic"><use href="#i-'+n+'"/></svg>';
+  const add = html => { const li=document.createElement('li'); li.innerHTML=html; list.appendChild(li); };
+  if (CONFIG.phone) add(icon('phone')+'<a href="tel:'+CONFIG.phone.replace(/\s/g,'')+'">'+CONFIG.phone+'</a>');
+  if (CONFIG.whatsapp) add(icon('chat')+'<a href="https://wa.me/'+CONFIG.whatsapp+'">WhatsApp us</a>');
+  if (CONFIG.email) add(icon('mail')+'<a href="mailto:'+CONFIG.email+'">'+CONFIG.email+'</a>');
+  if (CONFIG.website) add(icon('globe')+'<a href="'+CONFIG.website+'">'+CONFIG.website.replace(/^https?:\/\//,'')+'</a>');
+  CONFIG.social.forEach(s => add(icon('users')+'<a href="'+s.url+'">'+s.label+'</a>'));
+
+  /* mobile nav */
+  const btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', () => { const o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o); });
+  nav.addEventListener('click', e => { if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
+
+  /* tabs */
+  const tabs = [...document.querySelectorAll('.tab')];
+  function select(t){
+    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    t.focus();
+  }
+  tabs.forEach((t,i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', e => {
+      const k = e.key;
+      if (k==='ArrowDown'||k==='ArrowRight') { e.preventDefault(); select(tabs[(i+1)%tabs.length]); }
+      if (k==='ArrowUp'||k==='ArrowLeft') { e.preventDefault(); select(tabs[(i-1+tabs.length)%tabs.length]); }
+    });
+  });
+
+  /* enquiry form: connect to your backend or form service (Formspree, Netlify Forms, etc.) */
+  const form = document.getElementById('enquiry'), status = form.querySelector('.status');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const d = Object.fromEntries(new FormData(form));
+    if (!d.name || !d.email || !d.type) { status.style.color = '#C9304A'; status.textContent = 'Please add your name, email and the programme you need.'; return; }
+    status.style.color = '';
+    if (CONFIG.email) {
+      const body = 'Name: '+d.name+'\nOrganization: '+d.org+'\nPhone: '+d.phone+'\n\n'+d.msg;
+      location.href = 'mailto:'+CONFIG.email+'?subject='+encodeURIComponent('Enquiry: '+d.type)+'&body='+encodeURIComponent(body);
+    }
+    status.textContent = 'Thank you, '+d.name.split(' ')[0]+'. We have your request for a '+d.type.toLowerCase()+' and will reply by email.';
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>
