@@ -243,6 +243,18 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
   }
 }
 
+/* leadership: general manager row */
+.leader-gm{margin-top:88px;padding-top:72px;border-top:2px dashed rgba(14,59,44,.18)}
+.leader-gm .leader-photo{order:-1;max-width:300px;justify-self:start;width:100%;background:var(--palm)}
+.leader-gm .leader-photo svg{width:100%;height:auto;aspect-ratio:4/5}
+.leader-gm h3{font-size:clamp(1.9rem,3.6vw,2.6rem);line-height:1.06;margin-bottom:6px}
+.leader-gm .role{margin-bottom:0}
+@media (max-width:820px){
+  .leader-gm{grid-template-columns:1fr;margin-top:64px;padding-top:56px}
+  .leader-gm .leader-photo{max-width:240px;justify-self:center}
+}
+@media (max-width:600px){.leader-gm .leader-photo{width:min(78vw,280px);max-width:280px}}
+
 /* CEO image: iPhone/Safari-safe sizing */
 .leader-photo{
   width:100%;
@@ -431,6 +443,41 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
         <a class="btn dark" href="tel:0243740972"><svg class="ic"><use href="#i-phone"/></svg>0243 740 972</a>
       </div>
     </div>
+  </div>
+
+  <div class="wrap leader leader-gm">
+    <div>
+      <span class="tag">Management</span>
+      <h3>Christiana Dapaah Kwarteng</h3>
+      <p class="role">General Manager, Health Wise Foods</p>
+    </div>
+    <!-- To use a real photo later: replace the <svg> below with
+         <img src="images/christiana.jpg" alt="Christiana Dapaah Kwarteng, General Manager of Health Wise Foods" width="800" height="1000">
+         (the frame keeps the same 4:5 ratio as the CEO portrait). -->
+    <figure class="leader-photo">
+      <svg viewBox="0 0 400 500" role="img" aria-label="Monogram portrait for Christiana Dapaah Kwarteng, General Manager" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gm-bg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#14523A"/><stop offset="1" stop-color="#0E3B2C"/>
+          </linearGradient>
+          <radialGradient id="gm-glow" cx=".5" cy=".38" r=".6">
+            <stop offset="0" stop-color="#F0A81C" stop-opacity=".38"/><stop offset="1" stop-color="#F0A81C" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#gm-bg)"/>
+        <rect width="400" height="500" fill="url(#gm-glow)"/>
+        <!-- arch frame -->
+        <path d="M66 440V232a134 134 0 0 1 268 0V440z" fill="rgba(255,255,255,.06)" stroke="#F0A81C" stroke-opacity=".7" stroke-width="2"/>
+        <path d="M84 440V232a116 116 0 0 1 232 0V440z" fill="none" stroke="#F9D45C" stroke-opacity=".28" stroke-width="1.5"/>
+        <!-- monogram -->
+        <text x="200" y="262" text-anchor="middle" fill="#F9D45C" style="font-family:var(--display);font-weight:800;font-size:92px;letter-spacing:-2px">CDK</text>
+        <rect x="160" y="290" width="80" height="3" rx="1.5" fill="#F0A81C"/>
+        <use href="#i-leaf" x="178" y="312" width="44" height="44" style="fill:none;stroke:#F0A81C;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round"/>
+        <!-- kente band -->
+        <rect y="440" width="400" height="3" fill="#F0A81C"/>
+        <rect y="452" width="400" height="48" fill="url(#kente)"/>
+      </svg>
+    </figure>
   </div>
 </section>
 <!-- ABOUT -->
