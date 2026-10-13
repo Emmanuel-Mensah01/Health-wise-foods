@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Health Wise Foods | Healthy Choices. Better Living.</title>
+<title>Health Wise Foods | Healthy Choices, Better Lives.</title>
 <meta name="description" content="Health Wise Foods is a Ghanaian food, nutrition education, healthy-living and food-training company serving individuals, families, schools, churches, companies and communities.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,7 +152,7 @@ p{max-width:62ch}
 .values .ic{width:36px;height:36px;color:var(--gold);margin-bottom:16px}
 .values h3{font-size:1.15rem;margin-bottom:8px;letter-spacing:.02em}
 .values p{font-size:.98rem;opacity:.85}
-.values li:last-child{background:var(--gold);color:var(--ink);grid-column:span 1;display:flex;align-items:flex-end;font:700 1.35rem/1.2 var(--display)}
+.values li.tagline{background:var(--gold);color:var(--ink);grid-column:span 1;display:flex;align-items:flex-end;font:700 1.35rem/1.2 var(--display)}
 
 /* partner */
 .partner{display:grid;grid-template-columns:1fr 1fr;gap:56px}
@@ -243,6 +243,9 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
   }
 }
 
+.promise.cstmt p{font-size:clamp(1.5rem,3.1vw,2.5rem);line-height:1.2;max-width:34em}
+.hero-tag{font:700 clamp(1.3rem,2.6vw,1.8rem)/1.1 var(--display);color:var(--sun);margin-top:20px;letter-spacing:-.01em}
+.hero-tag + .lead{margin-top:18px}
 /* leadership: general manager row */
 .leader-gm{margin-top:88px;padding-top:72px;border-top:2px dashed rgba(14,59,44,.18)}
 .leader-gm .leader-photo{order:-1;max-width:300px;justify-self:start;width:100%;background:var(--palm)}
@@ -255,6 +258,42 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
 }
 @media (max-width:600px){.leader-gm .leader-photo{width:min(78vw,280px);max-width:280px}}
 
+/* offer / culture / core values (added) */
+.sec.cream{background:#FFF7E3}
+.kicker{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;font-size:.85rem;padding:6px 16px;border-radius:999px;margin-bottom:16px}
+.offer{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.offer-card{--c:var(--gold);position:relative;isolation:isolate;overflow:hidden;border-radius:28px;min-height:500px;display:flex;flex-direction:column;justify-content:flex-end;color:var(--white);background:linear-gradient(160deg,var(--palm-2),var(--palm));box-shadow:0 18px 40px rgba(14,59,44,.22);border-top:6px solid var(--c)}
+.offer-card .oc-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.offer-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,42,31,.10) 0%,rgba(9,42,31,.42) 28%,rgba(9,42,31,.88) 58%,rgba(9,42,31,.96) 100%)}
+.offer-card:hover .oc-img{transform:scale(1.07)}
+.oc-body{padding:30px 30px 32px;display:flex;flex-direction:column;gap:14px}
+.offer-card .ic-wrap{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--c);color:var(--white);box-shadow:0 0 0 3px rgba(255,255,255,.9),0 10px 24px rgba(0,0,0,.28)}
+.offer-card .ic-wrap .ic{width:30px;height:30px}
+.offer-card h3{font-size:1.45rem;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.offer-card h3::after{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--c);margin-top:12px}
+.offer-card ul{display:grid;gap:9px}
+.offer-card li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;line-height:1.4;color:rgba(255,255,255,.94)}
+.offer-card li::before{content:"";width:11px;height:11px;margin-top:6px;flex:none;background:var(--sun);border-radius:0 100% 0 100%}
+.offer-card:nth-child(1){--c:var(--gold)}
+.offer-card:nth-child(2){--c:var(--leaf)}
+.offer-card:nth-child(3){--c:var(--hibiscus)}
+.offer-card:nth-child(4){--c:var(--gold)}
+.offer-card:nth-child(4) .ic-wrap{color:var(--ink)}
+.offer-card:nth-child(1) .ic-wrap{color:var(--ink)}
+.offer-card:nth-child(5){--c:var(--hibiscus)}
+.offer-card:nth-child(6){--c:var(--leaf)}
+@media (prefers-reduced-motion:reduce){.offer-card .oc-img{transition:none}.offer-card:hover .oc-img{transform:none}}
+.vtop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.vtop .ic{margin-bottom:0}
+.values .num{font:700 .9rem var(--body);letter-spacing:.14em;color:var(--sun)}
+.culture{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+.culture h2{margin-bottom:0}
+.culture h3{font-size:1.5rem;margin-bottom:18px}
+.encourage{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.encourage li{display:flex;gap:12px;align-items:center;padding:16px 18px;border-radius:16px;background:var(--mist);font-weight:600;line-height:1.3}
+.encourage li::before{content:"";width:12px;height:12px;flex:none;background:var(--leaf);border-radius:0 100% 0 100%}
+@media (max-width:980px){.offer{grid-template-columns:1fr 1fr}.culture{grid-template-columns:1fr;gap:40px}}
+@media (max-width:600px){.offer{grid-template-columns:1fr}.encourage{grid-template-columns:1fr}
 /* CEO image: iPhone/Safari-safe sizing */
 .leader-photo{
   width:100%;
@@ -388,10 +427,11 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
         <path d="M11 32c0-11 7-18 20-19 0 13-7 20-18 20" fill="#0E3B2C"/>
         <path d="M11 32c5-7 9-11 14-14" stroke="#F0A81C" stroke-width="2" fill="none" stroke-linecap="round"/>
       </svg>
-      <span><b>Health Wise Foods</b><small>Healthy Choices. Better Living.</small></span>
+      <span><b>Health Wise Foods</b><small>Healthy Choices, Better Lives.</small></span>
     </a>
     <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#i-menu"/></svg></button>
     <nav class="nav" id="nav" aria-label="Main">
+      <a href="#values">Values</a>
       <a href="#leadership">Leadership</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -408,7 +448,8 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div>
-      <h1 id="hero-title">Healthy Choices.<br>Better Living.</h1>
+      <h1 id="hero-title">Healthy Choices,<br>Better Lives.</h1>
+      <p class="hero-tag">Eat Wise. Live Well.</p>
       <p class="lead">Health Wise Foods is a Ghanaian food, nutrition education, healthy-living and food-training company. We help individuals, families and communities make informed, healthier food choices.</p>
       <div class="cta-row">
         <a class="btn gold" href="#contact">Book a programme <svg class="ic"><use href="#i-arrow"/></svg></a>
@@ -429,6 +470,23 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
   <svg class="strip" aria-hidden="true"><rect width="100%" height="24" fill="url(#kente)"/></svg>
 </section>
 
+
+<!-- VALUES -->
+<section class="sec palm" id="values" aria-labelledby="val-h">
+  <div class="wrap">
+    <div class="sec-head"><h2 id="val-h">Our core values</h2></div>
+    <ul class="values">
+      <li><div class="vtop"><svg class="ic"><use href="#i-heart"/></svg><span class="num">01</span></div><h3>Health First</h3><p>We place the health and well-being of our customers at the center of every product and service we offer.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-star"/></svg><span class="num">02</span></div><h3>Quality Excellence</h3><p>We are committed to maintaining the highest standards of food safety, freshness, and nutritional value.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-shield"/></svg><span class="num">03</span></div><h3>Integrity</h3><p>We conduct our business with honesty, transparency, and accountability in all our dealings.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-bulb"/></svg><span class="num">04</span></div><h3>Innovation</h3><p>We continuously develop new and improved food solutions that meet evolving nutritional needs.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-chat"/></svg><span class="num">05</span></div><h3>Customer Focus</h3><p>We listen to our customers and strive to exceed their expectations through exceptional service.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-leaf"/></svg><span class="num">06</span></div><h3>Sustainability</h3><p>We promote environmentally responsible practices that support future generations.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-users"/></svg><span class="num">07</span></div><h3>Community Impact</h3><p>We are dedicated to improving public health and supporting the communities we serve.</p></li>
+      <li><div class="vtop"><svg class="ic"><use href="#i-globe"/></svg><span class="num">08</span></div><h3>Diversity and Inclusion</h3><p>We embrace diverse cultures, ideas, and perspectives while serving people of all backgrounds.</p></li>
+    </ul>
+  </div>
+</section>
 
 <!-- LEADERSHIP -->
 <section class="sec" id="leadership" aria-labelledby="lead-h">
@@ -495,8 +553,8 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
         </ul>
       </div>
       <div class="vm">
-        <article class="v"><h3>Our vision</h3><p>To become a leading and trusted Ghanaian brand in healthy food production, nutrition education, healthy-living promotion and food entrepreneurship training, while expanding our impact across Africa.</p></article>
-        <article class="m"><h3>Our mission</h3><p>To empower people with quality food products, practical knowledge, skills and education that encourage healthier lifestyles and create opportunities in healthy-food production.</p></article>
+        <article class="v"><h3>Our vision</h3><p>To become Ghana&#8217;s most trusted provider of nutritious, affordable, and innovative food solutions that promote healthy lifestyles and transform communities.</p></article>
+        <article class="m"><h3>Our mission</h3><p>To improve the health and quality of life of our customers by providing wholesome food products, nutrition education, and exceptional service while maintaining the highest standards of integrity and excellence.</p></article>
       </div>
     </div>
 
@@ -518,39 +576,17 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="sec" id="services" aria-labelledby="serv-h">
+<!-- OFFER -->
+<section class="sec cream" id="services" aria-labelledby="offer-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="serv-h">Four ways we work with you</h2><p>From the food on the shelf to the talk in the hall, every service is practical, interactive and built around your group.</p></div>
-    <div class="bento">
-      <article class="card c-a">
-        <img class="card-img" onerror="this.remove()" src="https://images.unsplash.com/photo-1542814784-133212a2e378?auto=format&fit=crop&w=800&q=70" alt="Fresh vegetables arranged in a bowl" width="1000" height="667">
-        <div class="ic-wrap"><svg class="ic"><use href="#i-jar"/></svg></div>
-        <h3>Healthy food production</h3>
-        <p>We develop and produce food products with a focus on quality, convenience, nutrition and good food practices.</p>
-        <ul class="chips"><li>Ginger and garlic products</li><li>Natural food powders</li><li>Healthy food blends</li><li>Plant-based products</li><li>Healthy snacks</li><li>Food ingredients</li></ul>
-      </article>
-      <article class="card c-b">
-        <img class="card-img" onerror="this.remove()" src="https://images.unsplash.com/photo-1665332195309-9d75071138f0?auto=format&fit=crop&w=800&q=70" alt="Jollof rice with grilled chicken, fish and fresh vegetables" width="1000" height="667">
-        <div class="ic-wrap"><svg class="ic"><use href="#i-mic"/></svg></div>
-        <h3>Healthy-living conferences</h3>
-        <p>Educational conferences for organizations, churches, schools, companies and communities.</p>
-        <ul class="chips"><li>Balanced nutrition</li><li>Food hygiene and safety</li><li>Family nutrition</li><li>Understanding food labels</li><li>Healthy eating on a budget</li><li>Healthy lifestyles</li></ul>
-      </article>
-      <article class="card c-c">
-        <img class="card-img" onerror="this.remove()" src="https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=800&q=70" alt="Sauteing fresh vegetables in a pan" width="1000" height="667">
-        <div class="ic-wrap"><svg class="ic"><use href="#i-utensils"/></svg></div>
-        <h3>Workshops and seminars</h3>
-        <p>Hands-on learning for groups who want to cook, process and build with healthy food.</p>
-        <ul class="chips"><li>Healthy cooking</li><li>Food preservation</li><li>Food processing</li><li>Healthy snacks</li><li>Food packaging</li><li>Product development</li><li>Food entrepreneurship</li></ul>
-      </article>
-      <article class="card c-d">
-        <img class="card-img" onerror="this.remove()" src="https://images.unsplash.com/photo-1664993101841-036f189719b6?auto=format&fit=crop&w=800&q=70" alt="A balanced plate of rice, vegetables and protein" width="1000" height="667">
-        <div class="ic-wrap" style="background:rgba(14,59,44,.12)"><svg class="ic"><use href="#i-chat"/></svg></div>
-        <h3>Individual consultations</h3>
-        <p>One-to-one sessions on healthy eating education, meal planning, food choices, healthy cooking, family nutrition education and lifestyle improvement.</p>
-        <p class="note">Our consultations are educational and do not replace medical diagnosis or treatment by a qualified healthcare professional.</p>
-      </article>
+    <div class="sec-head"><h2 id="offer-h">Services we offer</h2></div>
+    <div class="offer">
+      <article class="offer-card"><img class="oc-img" src="https://images.unsplash.com/photo-1633360821154-1935fb5671e6?auto=format&fit=crop&w=800&q=70" alt="" width="800" height="1000" loading="lazy" onerror="this.remove()"><div class="oc-body"><div class="ic-wrap"><svg class="ic"><use href="#i-jar"/></svg></div><h3>Food Production &amp; Supply</h3><ul><li>Production of healthy snacks</li><li>Natural fruit juices and beverages</li><li>Whole grain and high-fiber products</li><li>Low-sugar and diabetic-friendly foods</li><li>Organic and preservative-free food products</li><li>Plant-based food products</li></ul></div></article>
+      <article class="offer-card"><img class="oc-img" src="https://images.unsplash.com/photo-1664993101841-036f189719b6?auto=format&fit=crop&w=800&q=70" alt="" width="800" height="1000" loading="lazy" onerror="this.remove()"><div class="oc-body"><div class="ic-wrap"><svg class="ic"><use href="#i-heart"/></svg></div><h3>Nutrition &amp; Wellness Services</h3><ul><li>Nutritional counseling</li><li>Diet planning and meal preparation</li><li>Weight management programs</li><li>Corporate wellness nutrition programs</li><li>School nutrition support services</li></ul></div></article>
+      <article class="offer-card"><img class="oc-img" src="https://images.unsplash.com/photo-1665332195309-9d75071138f0?auto=format&fit=crop&w=800&q=70" alt="" width="800" height="1000" loading="lazy" onerror="this.remove()"><div class="oc-body"><div class="ic-wrap"><svg class="ic"><use href="#i-utensils"/></svg></div><h3>Catering Services</h3><ul><li>Healthy corporate catering</li><li>Event catering with nutritious menus</li><li>School feeding solutions</li><li>Hospital and healthcare facility meal supply</li></ul></div></article>
+      <article class="offer-card"><img class="oc-img" src="https://images.unsplash.com/photo-1599997842102-744084270ad2?auto=format&fit=crop&w=800&q=70" alt="" width="800" height="1000" loading="lazy" onerror="this.remove()"><div class="oc-body"><div class="ic-wrap"><svg class="ic"><use href="#i-building"/></svg></div><h3>Retail &amp; Distribution</h3><ul><li>Healthy food retail stores</li><li>Online food ordering and delivery</li><li>Wholesale supply to supermarkets and institutions</li><li>Subscription-based healthy meal packages</li></ul></div></article>
+      <article class="offer-card"><img class="oc-img" src="https://images.unsplash.com/photo-1535291692377-b7eb2fb22a8b?auto=format&fit=crop&w=800&q=70" alt="" width="800" height="1000" loading="lazy" onerror="this.remove()"><div class="oc-body"><div class="ic-wrap"><svg class="ic"><use href="#i-book"/></svg></div><h3>Health Education Programs</h3><ul><li>Nutrition workshops and seminars</li><li>Community health outreach programs</li><li>Healthy cooking demonstrations</li><li>Corporate health awareness campaigns</li></ul></div></article>
+      <article class="offer-card"><img class="oc-img" src="https://images.unsplash.com/photo-1542814784-133212a2e378?auto=format&fit=crop&w=800&q=70" alt="" width="800" height="1000" loading="lazy" onerror="this.remove()"><div class="oc-body"><div class="ic-wrap"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Specialized Food Services</h3><ul><li>Diabetic-friendly meal plans</li><li>Hypertension-friendly diets</li><li>Children&#8217;s nutrition products</li><li>Elderly nutrition support programs</li><li>Sports and fitness nutrition products</li></ul></div></article>
     </div>
   </div>
 </section>
@@ -630,20 +666,27 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
   </div>
 </section>
 
-<!-- VALUES -->
-<section class="sec palm" id="values" aria-labelledby="val-h">
+<!-- CULTURE -->
+<section class="sec" id="culture" aria-labelledby="cult-h">
   <div class="wrap">
-    <div class="sec-head"><h2 id="val-h">The values behind every programme and product</h2></div>
-    <ul class="values">
-      <li><svg class="ic"><use href="#i-star"/></svg><h3>Quality</h3><p>High standards in our products and services.</p></li>
-      <li><svg class="ic"><use href="#i-heart"/></svg><h3>Health</h3><p>Informed, healthier food and lifestyle choices.</p></li>
-      <li><svg class="ic"><use href="#i-shield"/></svg><h3>Integrity</h3><p>Honest, responsible and professional conduct.</p></li>
-      <li><svg class="ic"><use href="#i-book"/></svg><h3>Education</h3><p>Knowledge as the foundation of healthier communities.</p></li>
-      <li><svg class="ic"><use href="#i-bulb"/></svg><h3>Innovation</h3><p>Better ways to develop food products and deliver services.</p></li>
-      <li><svg class="ic"><use href="#i-seed"/></svg><h3>Empowerment</h3><p>Knowledge and practical skills that create opportunities.</p></li>
-      <li><svg class="ic"><use href="#i-users"/></svg><h3>Community</h3><p>Healthier individuals build stronger families and communities.</p></li>
-      <li>Healthy living, practical and achievable.</li>
-    </ul>
+    <div class="culture">
+      <div>
+        <span class="kicker">Corporate culture</span>
+        <h2 id="cult-h">A culture of health, innovation, excellence, and community impact.</h2>
+      </div>
+      <div>
+        <h3>We encourage</h3>
+        <ul class="encourage"><li>Customer-centered decision-making</li><li>High ethical standards</li><li>Continuous learning and innovation</li><li>Team collaboration</li><li>Respect for diversity</li><li>Quality consciousness</li><li>Community engagement</li><li>Environmental responsibility</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE STATEMENT -->
+<section class="promise cstmt" aria-label="Culture statement">
+  <div class="wrap">
+    <span class="kicker" style="background:var(--palm);color:var(--white)">Culture statement</span>
+    <p>At HealthWise Foods Ghana, we cultivate a culture of wellness, integrity, innovation, and service excellence, empowering our team to create nutritious food solutions that improve lives and strengthen communities.</p>
   </div>
 </section>
 
@@ -660,14 +703,6 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
       <div><h3>We welcome partnerships with</h3><ul class="tags fill"><li>Schools</li><li>Churches</li><li>Companies</li><li>NGOs</li><li>Community groups</li><li>Associations</li><li>Food businesses</li><li>Institutions</li></ul></div>
       <div><h3>Partnership opportunities</h3><ul class="tags"><li>Health-awareness programmes</li><li>School nutrition programmes</li><li>Church health programmes</li><li>Corporate wellness education</li><li>Community outreach</li><li>Food-production training</li><li>Workshops and conferences</li><li>Food-product development</li></ul></div>
     </div>
-  </div>
-</section>
-
-<!-- PROMISE -->
-<section class="promise" aria-label="Our promise">
-  <div class="wrap">
-    <p>We educate. We empower. We produce. We create opportunities.</p>
-    <small>We believe healthy living should be practical, understandable and achievable, and we help people move from hearing about healthy living to applying it in everyday life.</small>
   </div>
 </section>
 
@@ -713,7 +748,7 @@ footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding
 <footer>
   <div class="wrap">
     <div>
-      <a class="brand" href="#top" style="color:#fff"><svg width="38" height="38" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="21" fill="#F0A81C"/><path d="M11 32c0-11 7-18 20-19 0 13-7 20-18 20" fill="#0E3B2C"/></svg><span><b>Health Wise Foods</b><small>Healthy Choices. Better Living.</small></span></a>
+      <a class="brand" href="#top" style="color:#fff"><svg width="38" height="38" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="21" fill="#F0A81C"/><path d="M11 32c0-11 7-18 20-19 0 13-7 20-18 20" fill="#0E3B2C"/></svg><span><b>Health Wise Foods</b><small>Healthy Choices, Better Lives.</small></span></a>
       <p style="margin-top:16px;font-size:.95rem">A Ghanaian food, nutrition education, healthy-living and food-training company.</p>
     </div>
     <nav aria-label="Footer"><a href="#about">About</a><a href="#services">Services</a><a href="#outreach">Outreach</a><a href="#training">Training</a><a href="#values">Values</a><a href="#partner">Partner</a><a href="#contact">Contact</a></nav>
